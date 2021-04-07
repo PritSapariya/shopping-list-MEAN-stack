@@ -5,7 +5,7 @@ var cors = require('cors');
 
 var app = express();
 
-const route = require('./route/route.js');
+const route = require('./route/routes.js');
 
 mongoose.connect('mongodb://localhost:27017/shoppinglist' );
 
@@ -27,7 +27,7 @@ app.use(bodyparser.json());
 app.use('/api', route);
 
 app.get('/', (req, res) => {
-    res.send("Testing Route ...");
+    res.send("Hello World!");
 });
 
 app.listen(PORT, () => {
