@@ -1,7 +1,8 @@
 var express = require('express');
 var mongoose = require('mongoose');
-var bodyparser = require('body-parser');
+// var bodyparser = require('body-parser');
 var cors = require('cors');
+require('dotenv').config();
 
 var app = express();
 
@@ -18,11 +19,11 @@ mongoose.connection.on('error', (err) => {
 });
 
 
-const PORT = 5000;
+const PORT = process.env.PORT;
 
 app.use(cors());                            // This will help to communicate with two different PORT
 
-app.use(bodyparser.json());
+app.use(express.json());
 
 app.use('/api', route);
 
