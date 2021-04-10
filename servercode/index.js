@@ -18,7 +18,7 @@ mongoose.connection.on('error', (err) => {
 });
 
 
-const PORT = 3000;
+const PORT = 5000;
 
 app.use(cors());                            // This will help to communicate with two different PORT
 
